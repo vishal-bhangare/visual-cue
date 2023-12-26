@@ -17,7 +17,7 @@ const Analysis = () => {
       <Heading height={"64px"} textAlign={"center"}>
         Charts and Graphs
       </Heading>
-      <Box display={"flex"} flexWrap={"wrap"} overflowY={"scroll"} gap={10}>
+      <Box display={"flex"} flexWrap={"wrap"} gap={10}>
         <Box
           flex={1}
           flexBasis={"100%"}

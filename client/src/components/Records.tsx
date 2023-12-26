@@ -65,7 +65,8 @@ const Records = () => {
   );
   useEffect(() => {}, [data, page, sortBy]);
   return (
-    <Box w="100%" h="100%" overflow={"hidden"} p={4}>
+    <Box w="100%" h="100%" overflow={"hidden"} >
+      <Box w="100%" h="100%"  overflowY={'auto'} p={4}>
       <Center>
         <Heading h={"64px"}>Records</Heading>
       </Center>
@@ -271,6 +272,7 @@ const Records = () => {
             </Portal>
           </Popover>
         </Box>
+      </Box>
       </Box>
     </Box>
   );
