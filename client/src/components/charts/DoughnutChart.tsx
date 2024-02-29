@@ -34,14 +34,10 @@ const options = {
   },
 };
 const DoughnutChart = ({ region }: { region: string }) => {
-  const { data, refetch, isLoading } = useAllRecords(
-    "doughnutchart",
-    ["pestle"],
-    {
-      region: region,
-    }
-  );
-  var regionPestleMap: { [key: string]: number } = {};
+  const { data, refetch } = useAllRecords("doughnutchart", ["pestle"], {
+    region: region,
+  });
+  const regionPestleMap: { [key: string]: number } = {};
 
   data?.records?.forEach((record: { pestle: string }) => {
     const { pestle } = record;

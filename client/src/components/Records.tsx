@@ -239,7 +239,7 @@ const Records = () => {
                         )
                       )}
                   </Stack>
-                  <PopoverFooter>
+                  <PopoverFooter display="flex">
                     <Button
                       size={"sm"}
                       colorScheme="teal"

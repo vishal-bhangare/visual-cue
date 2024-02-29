@@ -45,20 +45,19 @@ const options = {
   },
 };
 const VerticalBarChart = () => {
-  const { data, refetch, isLoading } = useAllRecords(
+  const { data } = useAllRecords(
     "VerticalBarChart",
     ["pestle", "intensity"],
     {}
   );
-  var pestleIntensityMap: { [key: string]: number } = {};
-  var total = 0;
+  const pestleIntensityMap: { [key: string]: number } = {};
+
   data?.records?.forEach((record: { pestle: string; intensity: number }) => {
     const { pestle, intensity } = record;
     if (pestle) {
       if (!pestleIntensityMap[pestle]) {
         pestleIntensityMap[pestle] = intensity;
       } else pestleIntensityMap[pestle] += intensity;
-      total += intensity;
     }
   });
 

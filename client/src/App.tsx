@@ -4,7 +4,7 @@ import { privateRoutes, publicRoutes } from "./routes";
 import { useCookies } from "react-cookie";
 
 const App = () => {
-  const [cookies, setCookie] = useCookies();
+  const [cookies] = useCookies();
   const isLogged = cookies["isLogged"];
   const router = createBrowserRouter([
     isLogged ? privateRoutes() : {},

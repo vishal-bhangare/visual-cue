@@ -47,7 +47,7 @@ const options = {
   },
 };
 const LineChart = ({ topic }: { topic: string }) => {
-  const { data, refetch, isLoading } = useAllRecords(
+  const { data, refetch } = useAllRecords(
     "linechart",
     ["intensity", "start_year"],
     {
@@ -59,9 +59,9 @@ const LineChart = ({ topic }: { topic: string }) => {
       data?.records?.map((item: { start_year: any }) => item.start_year)
     ),
   ];
-  var yearIntensityMap: any = {};
-  var max = -Infinity;
-  var len = years.length;
+  const yearIntensityMap: any = {};
+  let max = -Infinity;
+  const len = years.length;
   data?.records?.forEach(
     (record: { intensity: number; start_year: number }) => {
       const { intensity, start_year } = record;

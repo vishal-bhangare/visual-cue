@@ -17,13 +17,9 @@ const options = {
   },
 };
 const PieChart = () => {
-  const { data, refetch, isLoading } = useAllRecords(
-    "piechart",
-    ["pestle", "likelihood"],
-    {}
-  );
+  const { data } = useAllRecords("piechart", ["pestle", "likelihood"], {});
 
-  var pestleLikelihoodMap: { [key: string]: number } = {};
+  const pestleLikelihoodMap: { [key: string]: number } = {};
 
   data?.records?.forEach((record: { pestle: string; likelihood: number }) => {
     const { pestle, likelihood } = record;
@@ -32,7 +28,7 @@ const PieChart = () => {
         pestleLikelihoodMap[pestle] = likelihood;
       } else pestleLikelihoodMap[pestle] += likelihood;
   });
-  var total = Object.values(pestleLikelihoodMap).reduce(
+  const total = Object.values(pestleLikelihoodMap).reduce(
     (prev: any, cur: any) => prev + cur,
     0
   );

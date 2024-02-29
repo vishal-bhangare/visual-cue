@@ -2,7 +2,7 @@ import axios, { AxiosRequestConfig } from "axios";
 import { Filters } from "../components/Records";
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:9000/api/v1",
+  baseURL: "https://visual-cue.onrender.com/api/v1",
 });
 
 class APIClient {
@@ -15,12 +15,12 @@ class APIClient {
     queries?: Filters,
     config?: AxiosRequestConfig
   ) => {
-    var queryStr = "";
+    let queryStr = "";
     filters?.forEach((filter, i) => {
       queryStr += `col${i}=${filter}&`;
     });
     const filterArr = Object.entries(queries!);
-    filterArr.forEach((filter, i) => {
+    filterArr.forEach((filter) => {
       if (filter[1]) queryStr += `${filter[0]}=${filter[1]}&`;
     });
     if (queryStr)
@@ -39,8 +39,8 @@ class APIClient {
     filters?: Filters
   ) => {
     const filterArr = Object.entries(filters!);
-    var filterStr = "";
-    filterArr.forEach((filter, i) => {
+    let filterStr = "";
+    filterArr.forEach((filter) => {
       if (filter[1]) filterStr += `&${filter[0]}=${filter[1]}`;
     });
 

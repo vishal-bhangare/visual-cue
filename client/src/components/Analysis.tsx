@@ -8,7 +8,7 @@ import PieChart from "./charts/PieChart";
 import VerticalBarChart from "./charts/VerticalBarChart";
 
 const Analysis = () => {
-  const { data: columnsData, isLoading: loadingFilters } = useColumns(true);
+  const { data: columnsData } = useColumns(true);
 
   const [topic, setTopic] = useState("");
   const [region, setRegion] = useState("");

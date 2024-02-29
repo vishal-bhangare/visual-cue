@@ -62,15 +62,14 @@ const HorizontalBarChart = () => {
     ["sector", "relevance"],
     {}
   );
-  var sectorRelevanceMap: { [key: string]: number } = {};
-  var total = 0;
+  const sectorRelevanceMap: { [key: string]: number } = {};
+
   data?.records?.forEach((record: { sector: string; relevance: number }) => {
     const { sector, relevance } = record;
     if (sector) {
       if (!sectorRelevanceMap[sector]) {
         sectorRelevanceMap[sector] = relevance;
       } else sectorRelevanceMap[sector] += relevance;
-      total += relevance;
     }
   });
 

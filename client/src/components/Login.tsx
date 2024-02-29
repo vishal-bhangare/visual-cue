@@ -13,7 +13,7 @@ import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [cookies, setCookie] = useCookies();
+  const [, setCookie] = useCookies();
   const navigate = useNavigate();
   const toast = useToast();
   const loginForm = useFormik({
@@ -51,7 +51,7 @@ const Login = () => {
           flexDir="column"
           alignItems="center"
           gap="4"
-          boxShadow="base"
+          boxShadow="xl"
           p="6"
           rounded="md"
           bg="white"
